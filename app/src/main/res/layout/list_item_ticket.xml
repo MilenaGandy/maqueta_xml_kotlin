@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp"
+    android:gravity="center_vertical"
+    android:background="?android:attr/selectableItemBackground"> <ImageView
+    android:id="@+id/iconTicket"
+    android:layout_width="24dp"
+    android:layout_height="24dp"
+    android:src="@drawable/baseline_article_24"
+    tools:srcCompat="@drawable/baseline_article_24"
+    android:layout_marginEnd="12dp"
+    android:contentDescription="Icono de ticket"/>
+
+    <TextView
+        android:id="@+id/textTicketNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="TK-00001"
+        android:textAppearance="?attr/textAppearanceBody1"
+        android:textStyle="bold"
+        android:layout_marginEnd="8dp"/>
+
+    <TextView
+        android:id="@+id/textTicketSubject"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        tools:text="Asunto muy largo del Ticket que debe cortarse"
+        android:textAppearance="?attr/textAppearanceBody1"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:layout_marginEnd="12dp"/>
+
+    <ImageView
+        android:id="@+id/iconViewTicket"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/baseline_call_made_24"
+        tools:srcCompat="@drawable/baseline_call_made_24"
+        android:contentDescription="Ver ticket"/>
+</LinearLayout>
