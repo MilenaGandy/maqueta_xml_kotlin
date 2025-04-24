@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.Toast
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import android.content.Intent
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,7 +47,19 @@ class LoginActivity : AppCompatActivity() {
                 // Credenciales CORRECTAS
                 Toast.makeText(this, "¡Inicio de sesión exitoso!", Toast.LENGTH_SHORT).show()
 
-                // TODO: Aquí irá la navegación a la pantalla principal
+                // Dentro del setOnClickListener del botón "Entrar", en el bloque if de éxito:
+                if (email == "agente@itops.com" && password == "12345678") {
+                    Toast.makeText(this, "¡Inicio de sesión exitoso!", Toast.LENGTH_SHORT).show()
+
+                    // --- Navegación a la pantalla principal ---
+                    val intent = Intent(this, MainAppActivity::class.java)
+                    startActivity(intent)
+                    finish() // Cierra LoginActivity para que el usuario no vuelva a ella con el botón Atrás
+                    // --- Fin Navegación ---
+
+                } else {
+                    Toast.makeText(this, "Usuario o contraseña incorrectos", Toast.LENGTH_LONG).show()
+                }
                 // val intent = Intent(this, MainAppActivity::class.java) // Crear MainAppActivity luego
                 // startActivity(intent)
                 // finish() // Opcional: cierra LoginActivity para que no se pueda volver atrás

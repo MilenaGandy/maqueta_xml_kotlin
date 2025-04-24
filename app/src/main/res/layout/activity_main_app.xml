@@ -18,13 +18,13 @@
         app:title="Tickets"
         app:titleTextColor="@color/black">
         <ImageView
-            android:id="@+id/iconUser"
+            android:id="@+id/iconExit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginEnd="16dp"
-            android:src="@drawable/baseline_account_circle_24"
-            android:contentDescription="Usuario" />
+            android:src="@drawable/baseline_exit_to_app_24"
+            android:contentDescription="Exit" />
     </com.google.android.material.appbar.MaterialToolbar>
 
     <EditText
@@ -35,7 +35,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/search_edittext_background"
-        android:drawableStart="@drawable/ic_search"
+        android:drawableStart="@drawable/baseline_search_24"
         android:drawablePadding="8dp"
         android:hint="Buscar ticket por ID"
         android:padding="12dp"
