@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F0F0F0"
-    tools:context=".LoginActivity">
+    tools:context=".LoginActivity"> <!-- Contexto cambiado a LoginActivity -->
 
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
@@ -25,9 +25,11 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="@android:color/white">
+
+            <!-- 1. CABECERO NEGRO (Igual al de Welcome) -->
             <LinearLayout
-                android:id="@+id/headerContainer"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0.35"
@@ -37,6 +39,7 @@
                 android:padding="16dp">
 
                 <TextView
+                    android:id="@+id/textViewLogoLine1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="ITOPS - Operaciones IT"
@@ -44,6 +47,7 @@
                     android:textSize="16sp" />
 
                 <TextView
+                    android:id="@+id/textViewLogoLine2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
@@ -54,108 +58,73 @@
 
             </LinearLayout>
 
+            <!-- 2. CONTENIDO BLANCO (Aquí va el formulario) -->
             <LinearLayout
-                android:id="@+id/formContainer"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0.65"
-                android:orientation="vertical"
-                android:padding="32dp"
                 android:gravity="center_horizontal"
-                android:background="@android:color/white">
+                android:orientation="vertical"
+                android:padding="24dp">
 
+                <!-- Título del Formulario -->
                 <TextView
-                    android:id="@+id/textViewLoginTitle"
+                    android:id="@+id/textViewTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="16dp"
                     android:text="Iniciar Sesión"
                     android:textColor="@android:color/black"
                     android:textSize="28sp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/textViewLoginSubtitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Ingresa tu usuario y contraseña"
-                    android:textColor="@color/dark_gray_text"
-                    android:textSize="16sp"/>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textFieldEmail"
+                <!-- Campo de Email -->
+                <EditText
+                    android:id="@+id/editTextEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="32dp"
-                    android:hint="Usuario (Email)*"
-                    app:boxBackgroundMode="none">
+                    android:layout_marginTop="24dp"
+                    android:hint="Correo Electrónico"
+                    android:inputType="textEmailAddress"
+                    android:background="@drawable/edittext_background"
+                    android:padding="12dp" />
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/editTextEmail"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/edittext_background"
-                        android:inputType="textEmailAddress"/>
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textFieldPassword"
+                <!-- Campo de Contraseña -->
+                <EditText
+                    android:id="@+id/editTextPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:hint="Contraseña*"
-                    app:passwordToggleEnabled="true"
-                    app:boxBackgroundMode="none">
+                    android:hint="Contraseña"
+                    android:inputType="textPassword"
+                    android:background="@drawable/edittext_background"
+                    android:padding="12dp" />
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/editTextPassword"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/edittext_background"
-                        android:inputType="textPassword"/>
-
-                </com.google.android.material.textfield.TextInputLayout>
-
+                <!-- Botón de Ingresar -->
                 <Button
-                    android:id="@+id/buttonEnter"
-                    android:layout_width="match_parent"
+                    android:id="@+id/buttonLogin"
+                    android:layout_width="198dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="32dp"
+                    android:layout_marginTop="24dp"
                     android:backgroundTint="@color/yellow_button"
-                    android:text="Entrar"
-                    android:textColor="@android:color/black"
+                    android:text="Ingresar"
                     android:textAllCaps="false"
-                    android:textSize="18sp"/>
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
 
+                <!-- Texto de Olvidó Contraseña -->
                 <TextView
                     android:id="@+id/textViewForgotPassword"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:text="¿Olvidaste tu contraseña?"
-                    android:textColor="@color/purple_40"
-                    android:textSize="14sp"/>
-
-                <TextView
-                    android:id="@+id/textViewRegisterLink"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Regístrate"
-                    android:textColor="@color/purple_40"
-                    android:textSize="14sp"/>
-
-                <TextView
-                    android:id="@+id/textViewVersionLogin"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
                     android:layout_marginTop="16dp"
-                    android:text="VERSIÓN 1.0"
-                    android:textColor="@color/yellow_button"
-                    android:textSize="12sp"/>
+                    android:text="¿Olvidó su contraseña?"
+                    android:textColor="@android:color/darker_gray" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
 
             </LinearLayout>
 

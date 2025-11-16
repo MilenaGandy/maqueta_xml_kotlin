@@ -7,23 +7,31 @@
     android:layout_height="match_parent"
     tools:context=".MainAppActivity">
 
+
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/mainToolbar"
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/yellow_button"
+        android:background="@android:color/holo_blue_light"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:title="Tickets"
-        app:titleTextColor="@color/black">
+        app:titleTextColor="@android:color/black">
+
+        <!--
+        ERROR ARREGLADO:
+        He cambiado tu ícono "@drawable/baseline_exit_to_app_24" por el
+        ícono por defecto de la app (@mipmap/ic_launcher) para que compile.
+        Deberás importar tus propios íconos a la carpeta 'drawable' después.
+        -->
         <ImageView
             android:id="@+id/iconExit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginEnd="16dp"
-            android:src="@drawable/baseline_exit_to_app_24"
+            android:src="@mipmap/ic_launcher"
             android:contentDescription="Exit" />
     </com.google.android.material.appbar.MaterialToolbar>
 
@@ -34,8 +42,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        android:background="@drawable/search_edittext_background"
-        android:drawableStart="@drawable/baseline_search_24"
+        android:background="@android:drawable/edit_text"
+        android:drawableStart="@mipmap/ic_launcher_round"
         android:drawablePadding="8dp"
         android:hint="Buscar ticket por ID"
         android:padding="12dp"
@@ -51,7 +59,7 @@
         android:layout_height="0dp"
         android:layout_marginEnd="16dp"
         android:background="?attr/selectableItemBackgroundBorderless"
-        android:src="@drawable/baseline_filter_alt_24"
+        android:src="@mipmap/ic_launcher_round"
         android:padding="8dp"
         android:contentDescription="Filtrar"
         app:layout_constraintTop_toTopOf="@id/searchEditText"
@@ -68,16 +76,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:listitem="@layout/list_item_ticket"
-        android:scrollbars="vertical"/> <com.google.android.material.floatingactionbutton.FloatingActionButton
-    android:id="@+id/fabAddTicket"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_margin="16dp"
-    app:srcCompat="@drawable/baseline_add_24"
-    app:backgroundTint="@color/yellow_button"
-    app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
-    app:layout_constraintEnd_toEndOf="parent"
-    android:contentDescription="Añadir Ticket" />
+        android:scrollbars="vertical"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddTicket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:srcCompat="@mipmap/ic_launcher"
+        app:backgroundTint="@android:color/holo_blue_light"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="Añadir Ticket" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
@@ -86,5 +96,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:menu="@menu/bottom_nav_menu"
-        app:labelVisibilityMode="labeled"/> </androidx.constraintlayout.widget.ConstraintLayout>
+        app:labelVisibilityMode="labeled"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
